@@ -1,0 +1,169 @@
+/* Загальний контейнер */
+.wrapper {
+    position: relative;
+    margin: 50px auto;
+    width: 450px;
+    height: 580px;
+}
+
+/* Додатковий блок */
+.dopBlock {
+    position: absolute;
+    z-index: 1;
+    top: 175px;
+    left: 120px;
+    width: 100px;
+    height: 160px;
+    background-color: black;
+    border-radius: 20px 0 0 20px;
+    border: 2px solid rgb(255, 174, 0);
+    transition: all 1s;
+}
+
+/* Кнопка відкриття додаткового блока */
+.openDopBlock {
+    position: absolute;
+    z-index: 7;
+    top: 220px;
+    left: 118px;
+    height: 100px;
+    width: 15px;
+    background-color: rgb(255, 132, 0);
+    border-radius: 5px 0 0 5px;
+    padding-left: 0;
+    font-size: 24px;
+}
+
+/* Кнопки "Факторіал" и "Фібоначчи" */
+.factorial {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.fibonacci {
+    position: absolute;
+    top: 80px;
+    left: 10px;
+}
+
+/* Загальний блок калькулятора */
+.calc {
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    width: 300px;
+    height: 500px;
+    border-radius: 20px;
+    background: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    padding: 15px;
+    box-shadow: 4px 4px 4px #4f4f4f;
+}
+
+/* Экран калькулятора */
+.calc-screen {
+    height: 125px;
+    padding: 10px;
+    display: grid;
+    justify-items: end;
+    align-items: end;
+    margin-bottom: 25px;
+}
+
+.calc-screen p {
+    text-align: right;
+    font-size: 4rem;
+    margin: 0;
+}
+.light .calc .calc-screen p:not(.theme-dark) {
+    color: #000;
+}
+/* Кнопки калькулятора */
+.buttons {
+    display: grid;
+    grid-template-areas:
+        "ac square percent division"
+        "seven eight nine multi"
+        "four five six minus"
+        "one two three plus"
+        "zero zero dot equal";
+    grid-gap: 7px;
+    justify-items: center;
+}
+
+.btn {
+    width: 60px;
+    height: 60px;
+    background: #333;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 60px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+.btn.zero {
+    grid-area: zero;
+    width: 100%;
+    border-radius: 35px;
+}
+
+.btn:hover {
+    filter: brightness(120%);
+}
+
+.btn:active {
+    filter: brightness(90%);
+}
+
+/* Стилі фонових кнопок */
+.btn.bg-grey {
+    background: #a6a6a6;
+}
+
+.btn.bg-orange {
+    background: #ff9501;
+}
+
+/* Теми */
+
+.light .calc {
+    background: #fff;
+    box-shadow: 4px 4px 4px #4f4f4f;
+    border: 1px solid #4f4f4f;
+    color: #fff;
+    
+}
+
+.dark .calc {
+    background: #000;
+    color: #fff;
+}
+
+/*Перемикач теми*/
+#theme-switch {
+    display: none;
+}
+
+.theme-toggle label {
+    position: absolute;
+    bottom: 0;
+    right: 100px;
+    display: inline-block;
+    background-color: #ff9501;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.theme-toggle label:hover {
+    background-color: #444;
+}
+
+.theme-toggle label:active {
+    background-color: #222;
+}
